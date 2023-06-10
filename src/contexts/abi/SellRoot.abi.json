@@ -1,0 +1,676 @@
+{
+    "ABI version": 2,
+    "data": [],
+    "events": [
+        {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "name": "collection",
+                            "type": "address"
+                        },
+                        {
+                            "name": "owner",
+                            "type": "address"
+                        },
+                        {
+                            "name": "addrNft",
+                            "type": "address"
+                        },
+                        {
+                            "name": "oldManager",
+                            "type": "address"
+                        },
+                        {
+                            "name": "offer",
+                            "type": "address"
+                        },
+                        {
+                            "name": "price",
+                            "type": "uint128"
+                        }
+                    ],
+                    "name": "offerInfo",
+                    "type": "tuple"
+                }
+            ],
+            "name": "SellDeployed",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "offer",
+                    "type": "address"
+                },
+                {
+                    "name": "addrNft",
+                    "type": "address"
+                },
+                {
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "name": "oldManager",
+                    "type": "address"
+                },
+                {
+                    "name": "newOwner",
+                    "type": "address"
+                },
+                {
+                    "name": "price",
+                    "type": "uint128"
+                }
+            ],
+            "name": "SellConfirmed",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "offer",
+                    "type": "address"
+                },
+                {
+                    "name": "addrNft",
+                    "type": "address"
+                },
+                {
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "name": "oldManager",
+                    "type": "address"
+                },
+                {
+                    "name": "price",
+                    "type": "uint128"
+                }
+            ],
+            "name": "SellCancelled",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "addrNft",
+                    "type": "address"
+                },
+                {
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "name": "oldManager",
+                    "type": "address"
+                }
+            ],
+            "name": "SellRejected",
+            "outputs": []
+        }
+    ],
+    "fields": [
+        {
+            "name": "_pubkey",
+            "type": "uint256"
+        },
+        {
+            "name": "_timestamp",
+            "type": "uint64"
+        },
+        {
+            "name": "_constructorFlag",
+            "type": "bool"
+        },
+        {
+            "name": "_supportedInterfaces",
+            "type": "optional(cell)"
+        },
+        {
+            "name": "_ownerPubkey",
+            "type": "uint256"
+        },
+        {
+            "name": "_marketFee",
+            "type": "uint8"
+        },
+        {
+            "name": "_marketFeeDecimals",
+            "type": "uint8"
+        },
+        {
+            "name": "_deploymentFee",
+            "type": "uint128"
+        },
+        {
+            "name": "_creationPrice",
+            "type": "uint128"
+        },
+        {
+            "name": "_minimalGasAmount",
+            "type": "uint128"
+        },
+        {
+            "name": "_nftGasAmount",
+            "type": "uint128"
+        },
+        {
+            "name": "_leftOnOfferAfterFinish",
+            "type": "uint128"
+        },
+        {
+            "name": "_nftTransferFee",
+            "type": "uint128"
+        },
+        {
+            "name": "_methodsCallsFee",
+            "type": "uint128"
+        },
+        {
+            "name": "_offerCode",
+            "type": "cell"
+        },
+        {
+            "name": "_totalDeployed",
+            "type": "uint256"
+        },
+        {
+            "name": "_withdrawalAddress",
+            "type": "address"
+        },
+        {
+            "name": "_marketIsActive",
+            "type": "bool"
+        }
+    ],
+    "functions": [
+        {
+            "inputs": [
+                {
+                    "name": "ownerPubkey",
+                    "type": "uint256"
+                },
+                {
+                    "name": "offerCode",
+                    "type": "cell"
+                },
+                {
+                    "name": "deploymentFee",
+                    "type": "uint128"
+                },
+                {
+                    "name": "creationPrice",
+                    "type": "uint128"
+                },
+                {
+                    "name": "minimalGasAmount",
+                    "type": "uint128"
+                },
+                {
+                    "name": "leftOnOfferAfterFinish",
+                    "type": "uint128"
+                },
+                {
+                    "name": "nftTransferFee",
+                    "type": "uint128"
+                },
+                {
+                    "name": "methodsCallsFee",
+                    "type": "uint128"
+                },
+                {
+                    "name": "nftGasAmount",
+                    "type": "uint128"
+                },
+                {
+                    "name": "marketFee",
+                    "type": "uint8"
+                },
+                {
+                    "name": "marketFeeDecimals",
+                    "type": "uint8"
+                },
+                {
+                    "name": "withdrawalAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "constructor",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "name": "oldManager",
+                    "type": "address"
+                },
+                {
+                    "name": "newManager",
+                    "type": "address"
+                },
+                {
+                    "name": "collection",
+                    "type": "address"
+                },
+                {
+                    "name": "sendGasTo",
+                    "type": "address"
+                },
+                {
+                    "name": "payload",
+                    "type": "cell"
+                }
+            ],
+            "name": "onNftChangeManager",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "name": "data",
+                    "type": "address"
+                },
+                {
+                    "name": "oldManager",
+                    "type": "address"
+                },
+                {
+                    "name": "newOwner",
+                    "type": "address"
+                },
+                {
+                    "name": "price",
+                    "type": "uint128"
+                }
+            ],
+            "name": "onOfferFinish",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "name": "data",
+                    "type": "address"
+                },
+                {
+                    "name": "oldManager",
+                    "type": "address"
+                },
+                {
+                    "name": "sendGasTo",
+                    "type": "address"
+                },
+                {
+                    "name": "price",
+                    "type": "uint128"
+                }
+            ],
+            "name": "onOfferCancel",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "answerId",
+                    "type": "uint32"
+                },
+                {
+                    "name": "price",
+                    "type": "uint128"
+                }
+            ],
+            "name": "generatePayload",
+            "outputs": [
+                {
+                    "name": "payload",
+                    "type": "cell"
+                },
+                {
+                    "name": "totalDeploymentValue",
+                    "type": "uint128"
+                },
+                {
+                    "name": "totalValueWithNftGas",
+                    "type": "uint128"
+                }
+            ]
+        },
+        {
+            "inputs": [
+                {
+                    "name": "value",
+                    "type": "uint128"
+                }
+            ],
+            "name": "setDeploymentFee",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "value",
+                    "type": "uint8"
+                },
+                {
+                    "name": "decimals",
+                    "type": "uint8"
+                }
+            ],
+            "name": "setMarketFee",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "value",
+                    "type": "uint128"
+                }
+            ],
+            "name": "setCreationPrice",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "value",
+                    "type": "uint128"
+                }
+            ],
+            "name": "setNftGasAmount",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "value",
+                    "type": "uint128"
+                }
+            ],
+            "name": "setMinimalGasAmount",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "value",
+                    "type": "uint128"
+                }
+            ],
+            "name": "setLeftOnOfferAfterFinish",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "value",
+                    "type": "uint128"
+                }
+            ],
+            "name": "setNftTransferFee",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "value",
+                    "type": "uint128"
+                }
+            ],
+            "name": "setMethodsCallsFee",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "value",
+                    "type": "bool"
+                }
+            ],
+            "name": "setMarketActiveStatus",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "newCode",
+                    "type": "cell"
+                }
+            ],
+            "name": "setOfferCode",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "value",
+                    "type": "uint128"
+                }
+            ],
+            "name": "withdraw",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "newAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "changeWithdrawalAddress",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "owner",
+                    "type": "uint256"
+                }
+            ],
+            "name": "changeOwner",
+            "outputs": []
+        },
+        {
+            "inputs": [],
+            "name": "destroy",
+            "outputs": []
+        },
+        {
+            "inputs": [
+                {
+                    "name": "answerId",
+                    "type": "uint32"
+                }
+            ],
+            "name": "getOwner",
+            "outputs": [
+                {
+                    "name": "ownerPubkey",
+                    "type": "uint256"
+                }
+            ]
+        },
+        {
+            "inputs": [
+                {
+                    "name": "answerId",
+                    "type": "uint32"
+                }
+            ],
+            "name": "getWithdrawalAddress",
+            "outputs": [
+                {
+                    "name": "withdrawalAddress",
+                    "type": "address"
+                }
+            ]
+        },
+        {
+            "inputs": [
+                {
+                    "name": "answerId",
+                    "type": "uint32"
+                }
+            ],
+            "name": "getFeesInfo",
+            "outputs": [
+                {
+                    "name": "deploymentFee",
+                    "type": "uint128"
+                },
+                {
+                    "name": "creationPrice",
+                    "type": "uint128"
+                },
+                {
+                    "name": "totalDeploymentPrice",
+                    "type": "uint128"
+                },
+                {
+                    "name": "minimalGasAmount",
+                    "type": "uint128"
+                },
+                {
+                    "name": "nftGasAmount",
+                    "type": "uint128"
+                },
+                {
+                    "name": "leftOnOfferAfterFinish",
+                    "type": "uint128"
+                },
+                {
+                    "name": "nftTransferFee",
+                    "type": "uint128"
+                },
+                {
+                    "name": "methodsCallsFee",
+                    "type": "uint128"
+                },
+                {
+                    "name": "marketFee",
+                    "type": "uint8"
+                },
+                {
+                    "name": "marketFeeDecimals",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "inputs": [
+                {
+                    "name": "answerId",
+                    "type": "uint32"
+                }
+            ],
+            "name": "getMarketStatus",
+            "outputs": [
+                {
+                    "name": "marketIsActive",
+                    "type": "bool"
+                }
+            ]
+        },
+        {
+            "inputs": [
+                {
+                    "name": "answerId",
+                    "type": "uint32"
+                }
+            ],
+            "name": "offerCode",
+            "outputs": [
+                {
+                    "name": "code",
+                    "type": "cell"
+                }
+            ]
+        },
+        {
+            "inputs": [
+                {
+                    "name": "answerId",
+                    "type": "uint32"
+                }
+            ],
+            "name": "offerCodeHash",
+            "outputs": [
+                {
+                    "name": "codeHash",
+                    "type": "uint256"
+                }
+            ]
+        },
+        {
+            "inputs": [
+                {
+                    "name": "answerId",
+                    "type": "uint32"
+                },
+                {
+                    "name": "id",
+                    "type": "uint256"
+                }
+            ],
+            "name": "offerAddress",
+            "outputs": [
+                {
+                    "name": "offer",
+                    "type": "address"
+                }
+            ]
+        },
+        {
+            "inputs": [
+                {
+                    "name": "answerId",
+                    "type": "uint32"
+                },
+                {
+                    "name": "interfaceID",
+                    "type": "uint32"
+                }
+            ],
+            "name": "supportsInterface",
+            "outputs": [
+                {
+                    "name": "value0",
+                    "type": "bool"
+                }
+            ]
+        }
+    ],
+    "header": [
+        "pubkey",
+        "time",
+        "expire"
+    ],
+    "version": "2.2"
+}

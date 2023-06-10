@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+* {
+  font-family: "Public Sans", sans-serif !important;
+}
+
+@layer base {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply m-0;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply rounded-lg h-12 flex justify-center items-center font-semibold border-none text-base text-semi-black bg-primary hover:bg-primary-hover hover:!text-semi-black;
+  }
+
+  .btn-secondary {
+    @apply rounded-lg h-12 flex justify-center items-center font-semibold text-secondary border-none bg-layer-3 hover:bg-layer-focus hover:!text-secondary;
+  }
+
+  .btn-ghost {
+    @apply rounded-lg h-12 flex justify-center items-center font-semibold text-secondary !border-stroke hover:!bg-layer-focus hover:!text-secondary;
+  }
+
+  button.btn-primary[disabled],
+  button.btn-secondary[disabled] {
+    @apply bg-layer-3 text-tertiary bg-none hover:!text-tertiary;
+  }
+
+  .layout {
+    @apply w-full max-w-[1920px] mx-auto px-5 sm:px-8;
+  }
+  .container_home {
+    @apply w-full max-w-[1800px] m-auto px-8;
+  }
+  .three_dot_1_line {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .three_dot_2_line {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .spotlight_desc-color {
+    background: #1f1d43;
+    border-radius: 16px;
+  }
+  .spotlight_desc-color:hover {
+    background: #2a294f;
+  }
+
+  .spotlight_desc-color_active {
+    background: #2a294f;
+    border-radius: 16px;
+  }
+  .stat {
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(50px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .stat-ino {
+    color: white;
+    width: auto;
+    background: rgba(27, 35, 51, 0.61);
+    backdrop-filter: blur(8px);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @apply hover:bg-layer-focus;
+  }
+}
+/* .swiper-slide {
+  width: auto !important;
+  max-width: 100% !important;
+} */
+
+/*Override antd*/
+.ant-drawer-content-wrapper {
+  width: 207px !important;
+  margin-top: 4.5rem;
+}
+.ant-drawer-mask {
+  margin-top: 4.5rem;
+}
+.ant-drawer-content {
+  background: #131924 !important;
+}
+.ant-drawer-header {
+  border-bottom: 1px solid #1D2535 !important;
+}

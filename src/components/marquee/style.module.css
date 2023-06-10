@@ -1,0 +1,17 @@
+.marquee {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    gap: 16px;
+    -webkit-box-align: center;
+    align-items: center;
+    z-index: 1199;
+    height: 47px;
+    /* background: linear-gradient(90.01deg, rgb(44, 163, 255) 0.01%, rgb(0, 87, 255) 99.99%); */
+    background: #00C089;
+}
